@@ -5,4 +5,4 @@
 
 # The Ultimate Gruntfile.js
 
-Grunt.js has become an essential tool for the developers of BBC News.  Mark McDonnell and Tom Maslen talk you through how its used everyday to make the BBC News site, and in the process have created for you the... ULTIMATE gruntfile.js
+Grunt.js has become an essential tool for the developers of BBC News.  Mark McDonnell and Tom Maslen talk you through how it's used everyday to help make the BBC News responsive site, and in the process have created for you the... ULTIMATE Gruntfile!
