@@ -4,13 +4,13 @@ main: 1,550 words
 
 
 | SECTION      | WRITER  | WORD COUNT | PICTURES | TOPIC
-| box out 1    | Mark    | 300        | 1        | you don't need grunt.js
-| box out 2:   | Tom     | 300        | 1        | how BBC News uses grunt.js
+| box out 1    | Mark    | 300        | 1        | You don't need grunt.js
+| box out 2:   | Tom     | 300        | 1        | How BBC News uses grunt.js
 | Intro        | Tom     | 150        | 0        |
-| Main 1       |         | 337        | 1        | Keep gruntfile maintainable
-| Main 2       |         | 337        | 1        | keep it fast
-| Main 3       |         | 337        | 1        | speed up your development workflow
-| Main 4       |         | 337        | 1        | speed up your website
+| Main 1       | Mark    | 337        | 1        | Keep gruntfile maintainable
+| Main 2       | Tom     | 337        | 1        | keep it fast
+| Main 3       | Mark    | 337        | 1        | Speed up your development workflow
+| Main 4       | Tom     | 337        | 1        | Speed up your website
 | Conclusion   | Mark    | 150        | 0        |
 
 
