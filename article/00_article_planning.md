@@ -18,7 +18,9 @@ main: 1,550 words
 
 The Ultimate Gruntfile - by Mark McDonnell and Tom Maslen
 
-BBC News, with a worldwide audience of over 250 million users per week with 26 language sites depends on Grunt.js.  This article and it associated open source github project defines the ultimate grunt setup and the rationale behind it.  This article will take you from grunt beginner to grunt pro, teaching you how to structure your grunt project to make it maintainable, fast running and help you to produce the very best website that you are capable of.
+BBC News is the world's largest broadcast news organisation with a worldwide audience of over 250 million users per week, and with 26 language sites. 
+
+This article and its associated open source GitHub project defines the ultimate grunt setup and the rationale behind it.  This article will take you from grunt beginner to grunt pro, teaching you how to structure your grunt project to make it maintainable, fast running and helping you to be able to focus on building great websites, whilst allowing you to forget about the tediousness of configuring tools required to automate and develop modern day websites and applications.
 
 The Ultimate Gruntfile - by BBC News' Mark McDonnell and Tom Maslen
 
