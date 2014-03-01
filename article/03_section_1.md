@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 
 Isn't that better! You could have called the folder any thing you like, 'dragons-be-here' for example, and in the above code we would change it to: `grunt.loadTasks('dragons-be-here')`.
 
-We can see what one of those tasks might look like as a separate file. First let's see what the original task would have looked like inside the Gruntfile:
+We'll see what one of those tasks might look like as a separate file in a moment; but first let's see what the original task would have looked like (when inside the Gruntfile):
 
 ```js
 module.exports = function(grunt) {
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 };
 ```
 
-Now how does that look as a separate file:
+So now let's see how that task looks as a separate file:
 
 ```js
 module.exports = function(grunt) {
@@ -69,4 +69,41 @@ module.exports = function(grunt) {
     });
     grunt.loadNpmTasks('grunt-contrib-requirejs');
 };
+```
+
+## Keep that config out of your config!
+
+![46665993](https://f.cloud.github.com/assets/180050/2302628/56ecbe2c-a187-11e3-9dcf-6ef127db200c.jpg)
+
+Another important technique we can utilise is to move configuration files outside of the Gruntfile. One obvious place we see this happen a lot is with [JSHint](http://www.jshint.com/).
+
+The first step is to create a new file called `.jshintrc` and within it put your JSON configuration:
+
+```json
+{
+    "curly":      true,
+    "eqeqeq":     true,
+    "immed":      true,
+    "latedef":    true,
+    "noarg":      true,
+    "sub":        true,
+    "undef":      true,
+    "boss":       true,
+    "eqnull":     true,
+    "browser":    true,
+    "multistr":   true,
+    "newcap":     false
+    }
+}
+```
+
+Then from within your task JSHint task (which we'll assume is now safely out of the Gruntfile also and within it's own separate task file) you can specify the location of the configuration file:
+
+```js
+jshint: {
+    files: ['**/*.js'],
+    options: {
+        jshintrc: '.jshintrc'
+    }
+}
 ```
