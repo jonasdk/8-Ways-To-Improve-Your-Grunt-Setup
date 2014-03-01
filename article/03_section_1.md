@@ -96,7 +96,7 @@ The first step is to create a new file called `.jshintrc` and within it put your
 }
 ```
 
-Then from within your task JSHint task (which we'll assume is now safely out of the Gruntfile also and within it's own separate task file) you can specify the location of the configuration file:
+Then from within your JSHint task (which we'll assume is now safely out of the Gruntfile also and within it's own separate task file) you can specify the location of the configuration file:
 
 ```js
 jshint: {
@@ -106,3 +106,5 @@ jshint: {
     }
 }
 ```
+
+This same approach can be applied to any configuration data. It so happens that the JSHint task came pre-built with that functionality and so with other pre-built tasks you may need to dynamically load the config file yourself using the Grunt API (see http://gruntjs.com/api/grunt.file#reading-and-writing for details).
