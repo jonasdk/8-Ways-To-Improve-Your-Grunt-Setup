@@ -28,7 +28,7 @@ Our Gruntfile can now be as simple as:
 ```js
 module.exports = function(grunt) {
     grunt.loadTasks('grunt');
-    grunt.registerTask('default', ['jshint', 'foo', 'bar']);
+    grunt.registerTask('default', ['requirejs', 'foo', 'bar']);
 };
 ```
 
