@@ -93,7 +93,6 @@ The first step is to create a new file called `.jshintrc` and within it put your
     "browser":    true,
     "multistr":   true,
     "newcap":     false
-    }
 }
 ```
 
