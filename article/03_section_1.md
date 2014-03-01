@@ -1,11 +1,6 @@
-/*
-	word count: 337
-	images: 1
-*/
+## Keep your Gruntfile maintainable
 
-# Keep your Gruntfile maintainable
-
-Probably the biggest concerns for developers working with Grunt is that this wonderfully powerful configuration file over a short period of time (if not properly cared for) will evolve into an unwieldy beast.
+Probably the biggest concern for developers working with Grunt is that this wonderfully powerful configuration file over a short period of time (if not properly cared for) will evolve into an unwieldy beast.
 
 The best way to tackle this problem (like with all good software solutions) is to simplify as much as you can. So if we take a leaf out of the object-oriented design handbook we would know that our configuration file is doing too much and we need to break it down into component parts so it can more easily be managed and scaled (e.g. when we need to start adding more and more configuration and tasks to be run).
 
