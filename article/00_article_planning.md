@@ -6,7 +6,7 @@ main: 1,550 words
 
 
 | SECTION      | WRITER  | WORD COUNT | PICTURES | TOPIC                              |
-+--------------+---------+------------+----------+------------------------------------+
+| ------------ | ------- | ---------- | -------- | ---------------------------------- |
 | box out 1    | Mark    | 300        | 1        | You don't need grunt.js            |
 | box out 2:   | Tom     | 300        | 1        | How BBC News uses grunt.js         |
 | Intro        | Tom     | 150        | 0        |                                    |
