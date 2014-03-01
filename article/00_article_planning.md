@@ -1,17 +1,20 @@
 main: 1,550 words
+
 337 words + 1 picture for 4 main sections
+
 450 words + 1 picture for 3 main sections, intro or conclusion would require a picture 
 
 
-| SECTION      | WRITER  | WORD COUNT | PICTURES | TOPIC
-| box out 1    | Mark    | 300        | 1        | You don't need grunt.js
-| box out 2:   | Tom     | 300        | 1        | How BBC News uses grunt.js
-| Intro        | Tom     | 150        | 0        |
-| Main 1       | Mark    | 337        | 1        | Keep gruntfile maintainable
-| Main 2       | Tom     | 337        | 1        | keep it fast
-| Main 3       | Mark    | 337        | 1        | Speed up your development workflow
-| Main 4       | Tom     | 337        | 1        | Speed up your website
-| Conclusion   | Mark    | 150        | 0        |
+| SECTION      | WRITER  | WORD COUNT | PICTURES | TOPIC                              |
++--------------+---------+------------+----------+------------------------------------+
+| box out 1    | Mark    | 300        | 1        | You don't need grunt.js            |
+| box out 2:   | Tom     | 300        | 1        | How BBC News uses grunt.js         |
+| Intro        | Tom     | 150        | 0        |                                    |
+| Main 1       | Mark    | 337        | 1        | Keep gruntfile maintainable        |
+| Main 2       | Tom     | 337        | 1        | keep it fast                       |
+| Main 3       | Mark    | 337        | 1        | Speed up your development workflow |
+| Main 4       | Tom     | 337        | 1        | Speed up your website              |
+| Conclusion   | Mark    | 150        | 0        |                                    |
 
 
 ## Synopsis / pitch
