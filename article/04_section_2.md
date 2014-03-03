@@ -140,7 +140,7 @@ To be honest there isn't much to choose between them, I'd lean slightly towards 
 * The project chatter on github is more recent (relying on dead projects isn't fun)
 * Sindre Sorhus!!!
 
-Regardless of which one you choose (chose [grunt-parallel]() if you also want to run none Grunt tasks) the one thing you should do is use it together with [time-grunt](), a fantastic tool that tells you how long each task takes to run.
+Regardless of which one you choose (choose [grunt-parallel]() if you also want to run none Grunt tasks) the one thing you should do is use it together with [time-grunt](), a fantastic tool that tells you how long each task takes to run.
 
 You should first measure how long your grunt build takes to run, and then add in parallel/concurrent to see if running tasks together at the same time improves the build time.  You may be surprised to find that adding these tools in actually increases your build time.  This is because there is a cost to running two tasks in parallel, normally about 0.5 seconds, the time it takes to spin up another instance of Grunt.
 
