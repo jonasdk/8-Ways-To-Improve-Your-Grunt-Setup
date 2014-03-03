@@ -9,79 +9,15 @@ The biggest criticism of Grunt is that its slow.  While Grunt does have some sub
 
 ### Understand what each task does
 
-I'm not being sarcastic!  Don't be a script kiddie, take the time to read the documentation on how each task works and make sure you understand what you're making it do.  In the BBC News' Visual Journalism team we use [grunt-contrib-requirejs]() to concatenate all our JS files together.  We use the option to create JS source maps alongside the concatenated file.  One of our projects involved adding a 90Kb JSON file to create a map of the world with D3.  Each time the requirejs task ran it took 2 minutes to finish.  This was because the task was trying to create a sourcemap for all the SVG points in the JSON file.  Once we understood the foolish mistake we made, telling requirejs to ignore the JSON file reduced the running time to a few seconds.
+Don't be a script kiddie, take the time to read the documentation on how each task works and make sure you understand what you're making it do.
 
-* Choose what to concat in JS, show:
-    * include everything by default
-    * how to blacklist specific files
+For a project I recently worked on, we added a 90Kb data file for D3.js to compile into a map.  This caused our grunt build to take over 2 minutes to render a concatenated JS file via [grunt-contrib-requirejs](), not a great time to wait between saves.  The build took this long because [grunt-contrib-requirejs] was creating a JS sourcemap for the concatenated file, a fruitless task for a data file with thousands of points.  Blacklisting the data file brought the build back down to a few seconds.
 
 ### Conditionally load tasks
 
-By default all of the tasks you define within Grunt get loaded into memory regardless of whether or not they are going to be used.  With small Grunt setups this isn't an issue, its also useful too if you like to use Sindre Sorhus' popular task `load-grunt-tasks`, which removes the need to tell Grunt to load every task by name:
+Grunt loads into memory all the tasks you add to the Gruntfile, regardless of whether or not they are going to be used.  With small Grunt setups this isn't an issue, but as you add more tasks into your setup it will take longer for Grunt to spin everything up before running the task you requested.  This can be especially painful if you have a task that depends on something particularly heavy, like GraphicMagick, that can take 5 seconds to load into memory.
 
-```
-require('load-grunt-tasks')(grunt);
-```
-
-As your grunt setup gets more tasks added to it however, it will take longer for Grunt to spin up all the tasks before running the task you asked for.  This can be especially painful if you have a task that depends on something particularly heavy like GraphicMagick that can take 5 seconds to load into memory.
-
-To get around this issue we can be tricksy and setup each task in a way that conditionally loads itself only when it is required.  As an example let's look at building a responsive images workflow.  We'd need two tasks, the first creates different versions of a source image at numerous resolutions and the second runs them through imagemin to compress the file size:
-
-```
-module.exports = function (grunt) {
-    grunt.initConfig({
-        responsive_images: {
-            main: {
-                options: {
-                    sizes: [{
-                        width: 320
-                    }, {
-                        width: 640
-                    }, {
-                        width: 1024
-                    }]
-                },
-                files: [{
-                    expand: true,
-                    src: ['**.{jpg,gif,png}'],
-                    cwd: './source/img/responsive',
-                    custom_dest: './output/img/{%= width %}/'
-                }]
-            }
-        },
-        imagemin: {
-            dist: {
-                options: {
-                    optimizationLevel: 3,
-                    progressive: true
-                },
-                files: [{
-                    expand: true,
-                    src: ['<%= pkg.services.default %>/img/**/*.*'],
-                    dest: './'
-                }]
-            }
-        }
-    });
-    require('load-grunt-tasks')(grunt);
-    grunt.registerTask('images', ['responsive_images', 'imagemin']);
-};
-```
-
-Normally you'd run each task seperately...
-
-```
-grunt responsive_images
-grunt imagemin
-```
-
-Or you could create a shortcut to run them together...
-
-```
-grunt images
-```
-
-Now instead of loading the tasks into Grunt's global scope and registering the task `images` as a shortcut for the two tasks, we can register `images` as its own fully fledged task.  We can then load the `responsive_images` and `image_min` config definition and task loading commands into the `images` task definition scope like so:
+So lets be tricksy and setup the Grunt config in a very specific way to get around this problem.  We can define tasks within the config whose only roll is to define and run other tasks, like this:
 
 ```
 module.exports = function (grunt) {
@@ -105,40 +41,26 @@ module.exports = function (grunt) {
                 }]
             }
         });
-        grunt.config('imagemin', {
-            dist: {
-                options: {
-                    optimizationLevel: 3,
-                    progressive: true
-                },
-                files: [{
-                    expand: true,
-                    src: ['<%= pkg.services.default %>/img/**/*.*'],
-                    dest: './'
-                }]
-            }
-        });
         grunt.loadNpmTasks('grunt-contrib-imagemin');
-        grunt.loadNpmTasks('grunt-responsive-images');
-        grunt.task.run('responsive_images', 'imagemin');
+        grunt.task.run('responsive_images');
     });
 };
 ```
 
-This now means that Grunt will load `responsive_images` and `imagemin` tasks into memory if they are going to be used.
+The task `images` is loaded into memory each time Grunt runs, but the sub tasks within it are not.  These will be loaded and ran only if you run `grunt images`.  This will massively decrease the spinup time Grunt needs before its ready to run a task.  The only drawback is that you now have sub layers of tasks, you will need to give the tasks names that might describe or get confused with the tasks ran within them.
 
 ### Run tasks in parallel / concurrently
 
 A great way to speed up your grunt running time is to run tasks in parallel.  There are two very popular tasks that help you do this:
 
 * [grunt-parallel]()
-* [grunt-concurrent]() made by the node.js superstar Sindre Sorhus
+* [grunt-concurrent]()
 
 To be honest there isn't much to choose between them, I'd lean slightly towards [grunt-concurrent]() because:
 
 * The API is slightly more straight forward
 * The project chatter on github is more recent (relying on dead projects isn't fun)
-* Sindre Sorhus!!!
+* It's made by Sindre Sorhus!!!
 
 Regardless of which one you choose (chose [grunt-parallel]() if you also want to run none Grunt tasks) the one thing you should do is use it together with [time-grunt](), a fantastic tool that tells you how long each task takes to run.
 
