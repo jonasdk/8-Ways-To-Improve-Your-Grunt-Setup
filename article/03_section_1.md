@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 };
 ```
 
-Isn't that better! You could have called the folder any thing you like, 'do-not-touch-my-verukas' for example, and in the above code we would change it to: `grunt.loadTasks('dragons-be-here')`.
+Isn't that better! You could have called the folder any thing you like, 'do-not-touch-my-verukas' for example, and in the above code we would change it to: `grunt.loadTasks('do-not-touch-my-verukas')`.
 
 We'll see what one of those tasks might look like as a separate file in a moment; but first let's see what the original task would have looked like (when inside the Gruntfile):
 
