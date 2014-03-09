@@ -61,6 +61,8 @@ grunt.loadNpmTasks('grunt-newer');
 grunt.registerTask('lint', ['newer:jshint:all']);
 ```
 
+Now when you run `grunt lint` it will only run the `jshint` task against files that have changed since the last time the `jshint` task was run. So if you run the task and then edit a single JavaScript file, then when that file is saved that single file will only be linted as the `grunt-newer` task knows no other files need to be ran against JSHint again.
+
 ### Generate many variations of an image
 
 One of the *the* most time consuming tasks you will ever do on the front-end is generate multiple images (both different sizes AND different resolutions) for a single image. This is the wonderful world of "Responsive Web Design"! Rather than opening up your trusty photo editor and handling this job manually, let's instead automate this sucky process.
