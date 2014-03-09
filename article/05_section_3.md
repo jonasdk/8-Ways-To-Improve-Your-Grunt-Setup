@@ -5,11 +5,34 @@
 
 ## Speed up your development workflow
 
-### Only run tasks when they need to be ran
+Along with keeping your Gruntfile maintainable, the next biggest improvement you can make to your usage of Grunt is to have it help you improve your workflow; to help automate those tedious parts of your development day.
 
-[grunt-contrib-watch]() is a well known task that allows you to run specific tasks when certain files are changed.  It saves you having to run `grunt sass` when you save a SCSS file.  It's probably the best time saving task out there and I'd be surprised if you haven't come across it already.  You should it up to run specific streams within your workflow...
+Here are a few Grunt tasks you probably should be using:
 
-* responsive-images
-* make source files for JS debugging
-* HTML templater
-* grunt-init
+- [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
+- [grunt-newer](https://github.com/tschaub/grunt-newer)
+- [grunt-responsive-images](https://github.com/andismith/grunt-responsive-images)
+- [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
+- [grunt-init](http://gruntjs.com/project-scaffolding)
+
+### Only run tasks when a change has occurred
+
+tba
+
+### Only run tasks against files that have actually changed
+
+tba
+
+### Generate many variations of an image
+
+tba
+
+Generating every variation of a single image for a responsive design can be pretty tedious...
+
+### Generate JS source maps to help with debugging
+
+tba
+
+### Generate a boilerplate for... well, anything!
+
+tba
