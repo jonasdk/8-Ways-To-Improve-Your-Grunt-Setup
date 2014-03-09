@@ -37,7 +37,29 @@ watch: {
 
 ### Only run tasks against files that have actually changed
 
-tba
+Now, consider the above `grunt-contrib-watch` task. That's fantastic; but what would be even better is if you weren't having your task run against ALL the files when specifically only one or two have actually changed since the last time the task was run (that would be just a waste of time).
+
+This is where the [https://github.com/tschaub/grunt-newer](https://github.com/tschaub/grunt-newer) task comes in handy. You define your tasks (for example, your `jshint` task) as normal and the only thing you need to do is prefix the name of the task you want to run with `newer:`.
+
+For example:
+
+```js
+grunt.initConfig({
+    jshint: {
+        options: {
+            jshintrc: '.jshintrc'
+        },
+        all: {
+            src: 'src/**/*.js'
+        }
+    }
+});
+
+grunt.loadNpmTasks('grunt-contrib-jshint');
+grunt.loadNpmTasks('grunt-newer');
+
+grunt.registerTask('lint', ['newer:jshint:all']);
+```
 
 ### Generate many variations of an image
 
