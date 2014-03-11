@@ -1,31 +1,38 @@
-## First format:
+# 8 ways to improve your Grunt setup
 
 main: 1,550 words
 
-337 words + 1 picture for 4 main sections
+A list of improvements to make to your Grunt setup.  We'll write as much as we can, order everything by how relevant we think each section is and then we'll cut the list down to make the article fit the word count.
 
-450 words + 1 picture for 3 main sections, intro or conclusion would require a picture 
+Some notes:
 
-## Second format (larger word count):
+* 6 images are required still
+* We could drop the intro and conclusion if its now a listicle?
+* We could change the boxouts to be sections?
+* We currently have 12 sections so we need to cut at least 33%
+* The code examples are taking up too much word count
 
-main 1,750 words
+| Section name                                            | Priority | Word count | Limit reached |
+| ------------------------------------------------------- | -------- | ---------- | ------------- |
+| Keep your gruntfile maintainable                        | 1        | 286 + 390  |               |
+| Keep that config out of your config                     | 1        | 131 + 200  |               |
+| Conditionally load tasks                                | 1        | 203 + 250  |               |
+| Understand what each task does                          |          | 171        | *             |
+| Run tasks in parallel                                   |          | 340        |               |
+| Only run tasks when a change has occured                |          | 219 + 90   |               |
+| Only run tasks against files that have actually changed |          | 171 + 100  |               |
+| Generate many variations of an image                    |          | 142 + 170  |               |
+| Generate JS source maps to help with debugging          |          | 165 + 90   |               |
+| Generate a boilerplate for well anything                |          | 180        |               |
+| box 1                                                   | 5        | 380        |               |
+| box 2                                                   | 5        | 288 + 20   |               |
+| ------------------------------------------------------- | -------- | ---------- | ------------- |
+|                                                         | TOTAL    | 3,986      |               |
 
-387 words + 1 picture for 4 main sections
+These are part of the discarded section "Use grunt to make your site faster"
 
-616 words + 1 picture for 3 main sections, intro or conclusion would require a picture 
-
-## What we're doing at the moment:
-
-| SECTION      | WRITER  | WORD COUNT | PICTURES | TOPIC                              |
-| ------------ | ------- | ---------- | -------- | ---------------------------------- |
-| box out 1    | Mark    | 300        | 1        | You don't need grunt.js            |
-| box out 2:   | Tom     | 300        | 1        | How BBC News uses grunt.js         |
-| Intro        | Tom     | 150        | 0        |                                    |
-| Main 1       | Mark    | 337        | 1        | Keep gruntfile maintainable        |
-| Main 2       | Tom     | 337        | 1        | keep it fast                       |
-| Main 3       | Mark    | 337        | 1        | Speed up your development workflow |
-| Main 4       | Tom     | 337        | 1        | Speed up your website              |
-| Conclusion   | Mark    | 150        | 0        |                                    |
+| Auto versioning to maximise use of caching              | -1       |            |
+| Reduce http requests                                    | -1       |            |
 
 
 ## Synopsis / pitch
