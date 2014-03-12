@@ -16,9 +16,9 @@ Some notes:
 | ------------------------------------------------------- | -------- | ---------- | ------------- |
 | Keep your gruntfile maintainable                        | 1        | 286 + 390  |               |
 | Keep that config out of your config                     | 1        | 131 + 200  |               |
-| Conditionally load tasks                                | 1        | 203 + 250  |               |
-| Understand what each task does                          |          | 171        | *             |
-| Run tasks in parallel                                   |          | 340        |               |
+| Conditionally load tasks                                | 1        | 203 + 90   |               |
+| Understand what each task does                          |          | 171        |               |
+| Run tasks in parallel                                   |          | 340        | *             |
 | Only run tasks when a change has occured                |          | 219 + 90   |               |
 | Only run tasks against files that have actually changed |          | 171 + 100  |               |
 | Generate many variations of an image                    |          | 142 + 170  |               |
@@ -29,7 +29,7 @@ Some notes:
 | ------------------------------------------------------- | -------- | ---------- | ------------- |
 |                                                         | TOTAL    | 3,986      |               |
 
-These are part of the discarded section "Use grunt to make your site faster"
+These are part of the discarded section "Use grunt to make your site faster".  This could be a separate article all by itself.
 
 | Auto versioning to maximise use of caching              | -1       |            |
 | Reduce http requests                                    | -1       |            |
