@@ -8,23 +8,7 @@ So lets be tricksy and setup the Grunt config in a very specific way to get arou
 module.exports = function (grunt) {
     grunt.registerTask('images', [], function () {
         grunt.config('responsive_images', {
-            main: {
-                options: {
-                    sizes: [{
-                        width: 320
-                    }, {
-                        width: 640
-                    }, {
-                        width: 1024
-                    }]
-                },
-                files: [{
-                    expand: true,
-                    src: ['**.{jpg,gif,png}'],
-                    cwd: './source/img/responsive',
-                    custom_dest: './output/img/{%= width %}/'
-                }]
-            }
+            main: { ... }
         });
         grunt.loadNpmTasks('grunt-contrib-imagemin');
         grunt.task.run('responsive_images');
