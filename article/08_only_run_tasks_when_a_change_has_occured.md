@@ -21,7 +21,7 @@ Below is a simple example which demonstrates how you can create a `scripts` sub 
 ```js
 watch: {
   scripts: {
-    files: ['**/*.js'],
+    files: ['app/**/*.js'],
     tasks: ['jshint'],
     options: {
       spawn: false,
