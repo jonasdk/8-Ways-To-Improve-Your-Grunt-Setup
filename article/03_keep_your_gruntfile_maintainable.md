@@ -19,8 +19,6 @@ Your directory structure could look something like the following...
 │   └── index.html
 ├── grunt
 │   └── contrib-requirejs.js
-│   └── foo.js
-│   └── bar.js
 ```
 
 Our Gruntfile can now be as simple as:
@@ -43,7 +41,7 @@ module.exports = function(grunt) {
             compile: {
                 options: {
                     baseUrl: './app',
-                    mainConfigFile: './app/main.js',
+                    name: 'main',
                     out: './app/release/main.js'
                 }
             }
@@ -62,7 +60,7 @@ module.exports = function(grunt) {
         compile: {
             options: {
                 baseUrl: './app',
-                mainConfigFile: './app/main.js',
+                name: 'main',
                 out: './app/release/main.js'
             }
         }
