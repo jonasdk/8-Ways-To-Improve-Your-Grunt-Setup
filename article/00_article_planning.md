@@ -11,6 +11,10 @@ Some notes:
 * We could change the boxouts to be sections?
 * We currently have 12 sections so we need to cut at least 33%
 * The code examples are taking up too much word count
+* Project to do list:
+  * Setup all tasks to only register tasks when ran
+  * Make sure it all works
+
 
 | Section name                                            | Priority | Word count | Limit reached |
 | ------------------------------------------------------- | -------- | ---------- | ------------- |
