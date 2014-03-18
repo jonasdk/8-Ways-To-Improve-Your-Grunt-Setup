@@ -3,7 +3,9 @@ module.exports = function(grunt) {
         compile: {
             options: {
                 baseUrl: './app',
+                generateSourceMaps: true,
                 name: 'main',
+                optimize: 'uglify2',
                 out: './app/release/main.js'
             }
         }
