@@ -27,9 +27,9 @@ Then from within your JSHint task (which we'll assume is now safely out of the G
 
 ```js
 jshint: {
-    files: ['**/*.js'],
+    files: ['./app/**/*.js'],
     options: {
-        jshintrc: '.jshintrc'
+        jshintrc: './grunt/.jshintrc'
     }
 }
 ```

@@ -1,9 +1,9 @@
 module.exports = function (grunt) {
     grunt.config('jshint', {
+        files: ['app/**/*.js'],
         options: {
-            reporter: require('jshint-stylish')
-        },
-        target: ['./source/js/**/*']
+            jshintrc: './grunt/.jshintrc'
+        }
     });
     grunt.loadNpmTasks('grunt-contrib-jshint');
 };
