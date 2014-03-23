@@ -1,26 +1,19 @@
-### Only run tasks against files that have actually changed
+## Only run tasks against files that have actually changed
 
-Now, consider the above `grunt-contrib-watch` task. That's fantastic; but what would be even better is if you weren't having your task run against ALL the files when specifically only one or two have actually changed since the last time the task was run (that would be just a waste of time).
+The only thing faster than using `grunt-contrib-watch` to run tasks when a file changes, is to run tasks against only files that have actually changed since the the last time the task was ran.
 
-This is where the [https://github.com/tschaub/grunt-newer](https://github.com/tschaub/grunt-newer) task comes in handy. You define your tasks (for example, your `jshint` task) as normal and the only thing you need to do is prefix the name of the task you want to run with `newer:`.
+This is where the [https://github.com/tschaub/grunt-newer](https://github.com/tschaub/grunt-newer) task comes in handy.  You define your tasks as normal and the only thing you need to do is prefix the name of the task you want to run with `newer:`.
 
 For example:
 
 ```js
 grunt.initConfig({
     jshint: {
-        options: {
-            jshintrc: '.jshintrc'
-        },
-        all: {
-            src: 'src/**/*.js'
-        }
+        all: {src: 'src/**/*.js'}
     }
 });
-
 grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-newer');
-
 grunt.registerTask('lint', ['newer:jshint:all']);
 ```
 
