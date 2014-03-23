@@ -1,2 +1,22 @@
-@import "media_query";
 @import "normalize";
+
+div {
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;    
+  box-sizing: border-box;  
+}
+
+img {
+  width: 100%;
+}
+
+.main {
+  padding: 1em;
+}
+
+@media (min-width: 320px) {
+  .main {
+    margin: 0 auto;
+    max-width: 640px;
+  }
+}

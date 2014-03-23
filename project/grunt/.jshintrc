@@ -10,5 +10,12 @@
     "eqnull":     true,
     "browser":    true,
     "multistr":   true,
-    "newcap":     false
+    "newcap":     false,
+    "globals": {
+        "define": false,
+        "console": false,
+        "require": false,
+        "window": false,
+        "document": false
+    }
 }

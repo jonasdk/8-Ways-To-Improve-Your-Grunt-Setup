@@ -1,1 +1,2 @@
-define("main",[],function(){console.log("output")});
+define("main",[],function(){console.log("hi")});
+//# sourceMappingURL=main.js.map

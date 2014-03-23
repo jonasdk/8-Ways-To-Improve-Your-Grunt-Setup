@@ -11,9 +11,9 @@ module.exports = function (grunt) {
             },
             files: [{
                 expand: true,
-                cwd: '<%= wd %>',
+                cwd: 'images',
                 src: '*.{jpg,gif,png}',
-                dest: '<%= wd %>/Generated'
+                dest: 'site/img'
             }]
         }
     });
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
             files: [
                 {
                     expand: true,
-                    src: ['<%= wd %>/Generated/**.*'],
+                    src: ['site/img/**.*'],
                     overwrite: true
                 }
             ]

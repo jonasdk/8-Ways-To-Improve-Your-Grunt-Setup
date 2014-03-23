@@ -6,7 +6,8 @@ module.exports = function(grunt) {
                 generateSourceMaps: true,
                 name: 'main',
                 optimize: 'uglify2',
-                out: './app/release/main.js'
+                out: './app/release/main.js',
+                preserveLicenseComments: false
             }
         }
     });
