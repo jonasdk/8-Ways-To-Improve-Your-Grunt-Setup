@@ -14,24 +14,29 @@ Some notes:
 * Project to do list:
   * Setup all tasks to only register tasks when ran
   * Make sure it all works
+  * "keep your gruntfile maintainable" and code example need to be realigned
 
 
-| Section name                                            | Priority | Word count | Limit reached |
-| ------------------------------------------------------- | -------- | ---------- | ------------- |
-| Keep your gruntfile maintainable                        | 1        | 286 + 390  |               |
-| Keep that config out of your config                     | 1        | 131 + 200  |               |
-| Conditionally load tasks                                | 1        | 203 + 90   |               |
-| Understand what each task does                          |          | 171        |               |
-| Run tasks in parallel                                   |          | 340        | *             |
-| Only run tasks when a change has occured                |          | 219 + 90   |               |
-| Only run tasks against files that have actually changed |          | 171 + 100  |               |
-| Generate many variations of an image                    |          | 142 + 170  |               |
-| Generate JS source maps to help with debugging          |          | 165 + 90   |               |
-| Generate a boilerplate for well anything                |          | 180        |               |
-| box 1                                                   | 5        | 380        |               |
-| box 2                                                   | 5        | 288 + 20   |               |
-| ------------------------------------------------------- | -------- | ---------- | ------------- |
-|                                                         | TOTAL    | 3,986      |               |
+| Section name                                            | Priority | Word count | Limit reached (1,550) | Box outs (300 each) |
+| ------------------------------------------------------- | -------- | ---------- | --------------------- | ------------------- |
+| Conditionally load tasks                                | 1        | 203 + 90   |                       | *                   |
+| Only run tasks when a change has occured                | 2        | 219 + 90   |                       | *                   |
+| ------------------------------------------------------- | -------- | ---------- | --------------------- | ------------------- |
+| Keep your gruntfile maintainable                        | 1        | 282 + 380  |                       |                     |
+| Keep that config out of your config                     | 1        | 124 + 200  |                       |                     |
+| Understand what each task does                          | 2        | 147        |                       |                     |
+| Run tasks in parallel                                   | 2        | 287        |                       |                     |
+| Only run tasks against files that have actually changed | 2        | 149 + 80   | *                     |                     |
+| Generate a boilerplate for well anything                | 3        | 147        |                       |                     |
+| ------------------------------------------------------- | -------- | ---------- | --------------------- |                     |
+|                                                         | TOTAL    | 2,398      | 1,796                 |                     |
+
+## Discarded sections
+
+| Generate many variations of an image                    | 4        | 142 + 170  |                       |                     |
+| Generate JS source maps to help with debugging          | 4        | 165 + 90   |                       |                     |
+| box 1                                                   | 5        | 380        |
+| box 2                                                   | 5        | 288 + 20   |
 
 These are part of the discarded section "Use grunt to make your site faster".  This could be a separate article all by itself.
 
