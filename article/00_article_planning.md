@@ -22,13 +22,13 @@ Some notes:
 | Only run tasks when a change has occured                | 2        | 219 + 90   |                       | *                   |
 | ------------------------------------------------------- | -------- | ---------- | --------------------- | ------------------- |
 | Keep your gruntfile maintainable                        | 1        | 255 + 190  |                       |                     |
-| Keep that config out of your config                     | 1        | 124 + 200  |                       |                     |
+| Keep that config out of your config                     | 1        | 124 + 100  |                       |                     |
 | Understand what each task does                          | 2        | 147        |                       |                     |
 | Run tasks in parallel                                   | 2        | 287        |                       |                     |
-| Only run tasks against files that have actually changed | 2        | 149 + 80   | *                     |                     |
+| Only run tasks against files that have actually changed | 2        | 149 + 80   |                       |                     |
 | Generate a boilerplate for well anything                | 3        | 147        |                       |                     |
 | ------------------------------------------------------- | -------- | ---------- | --------------------- |                     |
-|                                                         | TOTAL    | 2,398      | 1,796                 |                     |
+|                                                         | TOTAL    | 2,081      | 1,479                 |                     |
 
 ## Discarded sections
 

@@ -8,18 +8,8 @@ The first step is to create a new file called `.jshintrc` and within it put your
 
 ```json
 {
-    "curly":      true,
-    "eqeqeq":     true,
-    "immed":      true,
-    "latedef":    true,
-    "noarg":      true,
-    "sub":        true,
-    "undef":      true,
-    "boss":       true,
-    "eqnull":     true,
-    "browser":    true,
-    "multistr":   true,
-    "newcap":     false
+    "curly": true,
+    ...
 }
 ```
 
