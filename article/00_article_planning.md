@@ -9,7 +9,6 @@ Some notes:
 * 6 images are required still
 * We could drop the intro and conclusion if its now a listicle?
 * We could change the boxouts to be sections?
-* We currently have 12 sections so we need to cut at least 33%
 * The code examples are taking up too much word count
 * Project to do list:
   * Setup all tasks to only register tasks when ran
@@ -22,7 +21,7 @@ Some notes:
 | Conditionally load tasks                                | 1        | 203 + 90   |                       | *                   |
 | Only run tasks when a change has occured                | 2        | 219 + 90   |                       | *                   |
 | ------------------------------------------------------- | -------- | ---------- | --------------------- | ------------------- |
-| Keep your gruntfile maintainable                        | 1        | 282 + 380  |                       |                     |
+| Keep your gruntfile maintainable                        | 1        | 255 + 190  |                       |                     |
 | Keep that config out of your config                     | 1        | 124 + 200  |                       |                     |
 | Understand what each task does                          | 2        | 147        |                       |                     |
 | Run tasks in parallel                                   | 2        | 287        |                       |                     |
