@@ -18,7 +18,6 @@ Some notes:
   * "keep your gruntfile maintainable" and code example need to be realigned
 * Feedback
   * Add the "before" example into "keep your gruntfile maintainable"
-  * 8 reads like its aimed at a newbie, change tone to make it sound aimed at more experienced devs
 * Move "understand what each task does" and make it sound a bit more summary
 
 
@@ -29,12 +28,12 @@ Some notes:
 | ------------------------------------------------------- | -------- | ---------- | --------------------- | ------------------- |
 | Keep your gruntfile maintainable                        | 1        | 255 + 190  |                       |                     |
 | Keep that config out of your config                     | 1        | 124 + 100  |                       |                     |
-| Understand what each task does                          | 2        | 147        |                       |                     |
 | Run tasks in parallel                                   | 2        | 287        |                       |                     |
 | Only run tasks against files that have actually changed | 2        | 149 + 80   |                       |                     |
-| Generate a boilerplate for well anything                | 3        | 147        |                       |                     |
+| Generate a boilerplate for well anything                | 3        | 134        |                       |                     |
+| Understand what each task does                          | 2        | 147        |                       |                     |
 | ------------------------------------------------------- | -------- | ---------- | --------------------- |                     |
-|                                                         | TOTAL    | 2,081      | 1,479                 |                     |
+|                                                         | TOTAL    | 2,067      | 1,465                 |                     |
 
 ## Discarded sections
 
