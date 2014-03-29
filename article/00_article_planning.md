@@ -18,7 +18,6 @@ Some notes:
   * "keep your gruntfile maintainable" and code example need to be realigned
 * Feedback
   * Add the "before" example into "keep your gruntfile maintainable"
-* Move "understand what each task does" and make it sound a bit more summary
 
 
 | Section name                                            | Priority | Word count | Limit reached (1,550) | Box outs (300 each) |
@@ -31,9 +30,9 @@ Some notes:
 | Run tasks in parallel                                   | 2        | 287        |                       |                     |
 | Only run tasks against files that have actually changed | 2        | 149 + 80   |                       |                     |
 | Generate a boilerplate for well anything                | 3        | 134        |                       |                     |
-| Understand what each task does                          | 2        | 147        |                       |                     |
+| Understand what each task does                          | 2        | 191        |                       |                     |
 | ------------------------------------------------------- | -------- | ---------- | --------------------- |                     |
-|                                                         | TOTAL    | 2,067      | 1,465                 |                     |
+|                                                         | TOTAL    | 2,101      | 1,499                 |                     |
 
 ## Discarded sections
 
