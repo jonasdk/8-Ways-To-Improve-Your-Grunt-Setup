@@ -7,13 +7,19 @@ A list of improvements to make to your Grunt setup.  We'll write as much as we c
 Some notes:
 
 * 6 images are required still
-* We could drop the intro and conclusion if its now a listicle?
-* We could change the boxouts to be sections?
-* The code examples are taking up too much word count
+  * Grunt logo
+  * chart showing spin up times before/after hack - boxout 1 "conditionally load tasks"
+  * commandline output of grunt-time showing 2 different rendering times - boxout 2 "only run tasks whena a change has occured"
+  * Sindre Sorhus photo
+  * Ben Altman photo
 * Project to do list:
   * Setup all tasks to only register tasks when ran
   * Make sure it all works
   * "keep your gruntfile maintainable" and code example need to be realigned
+* Feedback
+  * Add the "before" example into "keep your gruntfile maintainable"
+  * 8 reads like its aimed at a newbie, change tone to make it sound aimed at more experienced devs
+* Move "understand what each task does" and make it sound a bit more summary
 
 
 | Section name                                            | Priority | Word count | Limit reached (1,550) | Box outs (300 each) |
