@@ -1,6 +1,6 @@
-# 8 Ways To Improve Your Grunt.js Setup
+# 8 Ways To Improve Your Grunt Setup
 
-Grunt.js has become an essential tool for the developers of BBC News.  Mark McDonnell and Tom Maslen talk you through 8 steps to help you keep your Grunt.js setup fast, maintainable and scaleable.
+Grunt has become an essential tool for the developers of BBC News.  Mark McDonnell and Tom Maslen talk you through 8 steps to help you keep your Grunt setup fast, maintainable and scaleable.
 
 ## 1: Keep your Gruntfile maintainable
 
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 };
 ```
 
-Isn't that better! You could have called the folder any thing you like, 'omg-so-sexy' for example, and in the above code we would change it to: `grunt.loadTasks('omg-so-sexy')`.  With each task in its own file, we need to define it slightly differently to how it would normally be added in the Grunt.js file:
+Isn't that better! You could have called the folder any thing you like, 'omg-so-sexy' for example, and in the above code we would change it to: `grunt.loadTasks('omg-so-sexy')`.  With each task in its own file, we need to define it slightly differently to how it would normally be added in the Grunt file:
 
 ```js
 module.exports = function(grunt) {
@@ -166,7 +166,7 @@ grunt.registerTask('lint', ['newer:jshint:all']);
 
 Now when you run `grunt lint` it will only run the `jshint` task against files that have changed since the last time the `jshint` task was run. So if you run the task and then edit a single JavaScript file, then when that file is saved that single file will only be linted as the `grunt-newer` task knows no other files need to be ran against JSHint again.
 
-## 7: Create a default Grunt.js setup starting point for all your projects
+## 7: Create a default Grunt setup starting point for all your projects
 
 Grunt has a built-in feature called `grunt-init`, it allows you to define a template project structure that gets dynamically injected with configurable values when you start a new project.
 
@@ -180,4 +180,4 @@ The biggest criticism of Grunt is that its slow.  While Grunt does have some sub
 
 For a project I recently worked on, we added a 90Kb data file for D3.js to compile into a map.  This caused our grunt build to take over 2 minutes to render a concatenated JS file via [grunt-contrib-requirejs](https://github.com/gruntjs/grunt-contrib-requirejs) - not a great time to wait between saves.  The build took this long because [grunt-contrib-requirejs] was creating a JS sourcemap for the concatenated file, a fruitless task for a data file with thousands of points.  Blacklisting the data file brought the build back down to a few seconds.
 
-Ultimately, the best way to keep your Grunt.js setup maintainable, fast and scaleable is to understand what you are doing.  Keep reading about Grunt.js; follow thought leaders like Ben Altman (@cowboy - the creator of Grunt.js), Sindre Sorhus (@sindresorhus - node.js superstar) and Addy Osmani (@addyosmani - workflow enthusiast) instead of blindly 'copy and paste'ing code into your project.  Keep learning.
+Ultimately, the best way to keep your Grunt setup maintainable, fast and scaleable is to understand what you are doing.  Keep reading about Grunt; follow thought leaders like Ben Altman (@cowboy - the creator of Grunt), Sindre Sorhus (@sindresorhus - node.js superstar) and Addy Osmani (@addyosmani - workflow enthusiast) instead of blindly 'copy and paste'ing code into your project.  Keep learning.

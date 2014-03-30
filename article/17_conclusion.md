@@ -15,7 +15,7 @@ Let's recap what we've looked at:
 * Organise those files!
 * Only load what you need, when you actually need it
 * Consider alternatives such as gulp if they cater more to your specific needs
-* Small project? Just need some light configurating? Grunt.js
+* Small project? Just need some light configurating? Grunt
 * Can't find a Grunt or gulp task that does what you need?  Write your own native Node script/task
 
 Task runners such as Grunt are an essential tool to keep you focused on the job at hand: developing an awesome website/web application. They're designed to abstract away the tedious pain points of setting up a new project, so if you're not taking care of these tools they will come back and bite you in the ass. It's good to show them a little love and appreciation, so we hope that the tips we've shared with you today will help you keep your own warthog happily grunting along!

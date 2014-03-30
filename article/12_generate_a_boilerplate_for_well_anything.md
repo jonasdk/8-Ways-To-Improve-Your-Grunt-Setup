@@ -1,4 +1,4 @@
-## Create a default Grunt.js setup starting point for all your projects
+## Create a default Grunt setup starting point for all your projects
 
 Grunt has a built-in feature called `grunt-init`, it allows you to define a template project structure that gets dynamically injected with configurable values when you start a new project.
 

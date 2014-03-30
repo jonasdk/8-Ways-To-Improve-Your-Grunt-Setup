@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 };
 ```
 
-Isn't that better! You could have called the folder any thing you like, 'omg-so-sexy' for example, and in the above code we would change it to: `grunt.loadTasks('omg-so-sexy')`.  With each task in its own file, we need to define it slightly differently to how it would normally be added in the Grunt.js file:
+Isn't that better! You could have called the folder any thing you like, 'omg-so-sexy' for example, and in the above code we would change it to: `grunt.loadTasks('omg-so-sexy')`.  With each task in its own file, we need to define it slightly differently to how it would normally be added in the Grunt file:
 
 ```js
 module.exports = function(grunt) {
