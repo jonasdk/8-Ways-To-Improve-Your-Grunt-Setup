@@ -7,11 +7,12 @@ A list of improvements to make to your Grunt setup.  We'll write as much as we c
 Some notes:
 
 * 6 images are required still
-  * Grunt logo
+  * ADDED: Grunt logo
+  * ADDED: Sindre Sorhus photo
+  * ADDED: Ben Altman photo
+  * Screenshot showing `grunt-init` in use
   * chart showing spin up times before/after hack - boxout 1 "conditionally load tasks"
   * commandline output of grunt-time showing 2 different rendering times - boxout 2 "only run tasks whena a change has occured"
-  * Sindre Sorhus photo
-  * Ben Altman photo
 * Project to do list:
   * Setup all tasks to only register tasks when ran
   * Make sure it all works
