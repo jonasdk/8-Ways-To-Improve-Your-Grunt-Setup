@@ -184,10 +184,12 @@ The biggest criticism of Grunt is that its slow.  While Grunt does have some sub
 
 For a project I recently worked on, we added a 90Kb data file for D3.js to compile into a map.  This caused our grunt build to take over 2 minutes to render a concatenated JS file via [grunt-contrib-requirejs](https://github.com/gruntjs/grunt-contrib-requirejs) - not a great time to wait between saves.  The build took this long because [grunt-contrib-requirejs] was creating a JS sourcemap for the concatenated file, a fruitless task for a data file with thousands of points.  Blacklisting the data file brought the build back down to a few seconds.
 
+## Conclusion
+
 Ultimately, the best way to keep your Grunt setup maintainable, fast and scaleable is to understand what you are doing.  Keep reading about Grunt; follow thought leaders like Ben Altman (@cowboy - the creator of Grunt), Sindre Sorhus (@sindresorhus - node.js superstar) and Addy Osmani (@addyosmani - workflow enthusiast), and follow @gruntjs for the latest news on the project.  The best craft people become experts in how to use their tools.
 
-![](http://farm7.staticflickr.com/6060/5915265225_a96c228716_n.jpg)
+![](http://farm7.staticflickr.com/6060/5915265225_a96c228716_n.jpg)  
 Ben Altman (@cowboy) created Grunt as a tool for himself in 2011.  Its taken just 3 years for it to become an industry standard tool.
 
-![](https://pbs.twimg.com/profile_images/449923154354257921/MmIg3B2X.jpeg)
+![](https://pbs.twimg.com/profile_images/449923154354257921/MmIg3B2X.jpeg)  
 Sindre Sorhus (@sindresorhus) has created some of the most popular and useful Grunt plugins such as `load-grunt-tasks`, `grunt-concurrent` and `time-grunt`.
