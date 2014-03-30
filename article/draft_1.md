@@ -180,9 +180,11 @@ For example, imagine you develop a lot of Node.js modules that you publish to NP
 
 ## 8: Understand what each task does
 
-The biggest criticism of Grunt is that its slow.  While Grunt does have some sub-optimal design decisions in it (which are being addressed in Grunt v1.0), a Grunt setup overloaded with tasks is obviously going to run slowly.
+The biggest criticism of Grunt is that it's slow.  While Grunt does contain some sub-optimal design decisions (which are being actively addressed for the upcoming Grunt v1.0 release), a Grunt setup overloaded with tasks is obviously going to run slowly.
 
-For a project I recently worked on, we added a 90Kb data file for D3.js to compile into a map.  This caused our grunt build to take over 2 minutes to render a concatenated JS file via [grunt-contrib-requirejs](https://github.com/gruntjs/grunt-contrib-requirejs) - not a great time to wait between saves.  The build took this long because [grunt-contrib-requirejs] was creating a JS sourcemap for the concatenated file, a fruitless task for a data file with thousands of points.  Blacklisting the data file brought the build back down to a few seconds.
+As an example, we recently worked on a project where we had added a 90Kb data file for D3.js (a popular data visualisation tool) to compile into an interactive map.  This data file caused our grunt build to take over 2 minutes to render a concatenated JS file via [grunt-contrib-requirejs](https://github.com/gruntjs/grunt-contrib-requirejs) - not a great experience being forced to wait that long between saves.  The build took this long because [grunt-contrib-requirejs] was creating a JS sourcemap for the concatenated file, a fruitless task for a data file with thousands of points.  Blacklisting the data file brought the build back down to just a few seconds.
+
+Hopefully this example demonstrates that although this last tip seems too simple to bother mentioning; we notice this happening more often than not. We're so focused on the immediate problem we're trying to solve that we don't "see the woods for the trees" and so simple optimisations can have a massive performance improvement.
 
 ## Conclusion
 
