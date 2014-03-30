@@ -4,11 +4,11 @@ Grunt has quickly become an essential configuration based command line tool with
 
 ## 1: Keep your Gruntfile maintainable
 
-Probably the biggest concern for developers working with Grunt is that this wonderfully powerful configuration file over a short period of time will evolve into an unwieldy beast.
+One of the biggest concerns for developers working with Grunt is that this wonderfully powerful configuration file can evolve into an unwieldy beast. As with most complex tools, problems with maintainability can rapidly accumulate in a short period of time; leaving users overwhelmed with how best to resolve the complexity they're now faced with.
 
-The best way to tackle this problem is to simplify as much as you can. So if we take a leaf out of the object-oriented design handbook we would know that our configuration file is doing too much and we need to break it down into component parts so it can more easily be managed and scaled (e.g. when we need to start adding more and more configuration and tasks to be run).
+The best way to tackle this problem is to simplify as much as you can. If we were to take a leaf out of the object-oriented design handbook, we would know that our configuration file is doing too much and that we need to break it down into component parts to ease our ability to extend and manage our Gruntfile requirements (e.g. when we need to start adding more tasks and configuration settings).
 
-There are a few ways to solve this problem, but really the majority of solutions boil down to different implementations of the same general theme. The example I'm going to demonstrate is the simplest way possible to reduce the size and complexity of your Gruntfile.
+What we need to do is simplify our Gruntfile's structure. There are a few ways to do this, but the majority of solutions you read about boil down to different implementations of that general theme. The example I'm going to demonstrate is the best way possible to reduce the size and complexity of your Gruntfile.
 
 In your root directory (where you have your Gruntfile) you'll create a 'grunt' folder. Inside that folder will be individual JavaScript files; each containing a different task that you would have included within your main Gruntfile.
 
@@ -29,7 +29,9 @@ module.exports = function(grunt) {
 };
 ```
 
-Isn't that better! You could have called the folder any thing you like, 'omg-so-sexy' for example, and in the above code we would change it to: `grunt.loadTasks('omg-so-sexy')`.  With each task in its own file, we need to define it slightly differently to how it would normally be added in the Grunt file:
+
+
+Isn't that better! It's worth noting that the string `'grunt'` that was passed to the `loadTasks` method has nothing to do with the actual Grunt object, it refers to the name of the folder you created. You could have called the folder any thing you like, 'omg-so-sexy' for example, and in the above code we would change it to: `grunt.loadTasks('omg-so-sexy')`.  With each task in its own file, we need to define it slightly differently to how it would normally be added in the Grunt file:
 
 ```js
 module.exports = function(grunt) {
