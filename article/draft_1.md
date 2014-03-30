@@ -50,9 +50,11 @@ module.exports = function(grunt) {
 
 ## 2: Keep that config out of your config!
 
-Another important technique we can utilise is to move configuration files outside of the Gruntfile. One obvious place we see this happen a lot is with [JSHint](http://www.jshint.com/).
+Another important technique we can utilise is to move specific types of configuration outside of the Gruntfile.  One obvious place we see this happen a lot is with the JSHint plugin (https://github.com/gruntjs/grunt-contrib-jshint) which can be quite large and take up a lot of space in your overall Gruntfile. 
 
-The first step is to create a new file called `.jshintrc` and within it put your JSON configuration:
+Luckily JSHint has a built-in solution to this problem. Let's take a look at how we can use it to clean up our JSHint task.
+
+The first step we need to take is to create a new file called `.jshintrc` and within it put your JSON configuration:
 
 ```json
 {
@@ -61,7 +63,7 @@ The first step is to create a new file called `.jshintrc` and within it put your
 }
 ```
 
-Then from within your JSHint task (which we'll assume is now safely out of the Gruntfile also and within it's own separate task file) you can specify the location of the configuration file:
+Then from within your JSHint task (which we'll assume is now safely out of the Gruntfile and within it's own separate task file) you can specify the location of the configuration file:
 
 ```js
 jshint: {
