@@ -147,6 +147,8 @@ watch: {
 }
 ```
 
+Additionally, you can improve the performance of running the watch task against your Sass files by utilising the https://github.com/distracteddev/sassWatch plugin which avoids spinning up a new Ruby environment (something Sass relies on) every time a watch-hook is triggered.
+
 ## 6: Only run tasks against files that have actually changed
 
 The only thing faster than using `grunt-contrib-watch` to run tasks when a file changes, is to run tasks against only files that have actually changed since the the last time the task was ran.
