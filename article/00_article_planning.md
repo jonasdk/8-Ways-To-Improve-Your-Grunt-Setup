@@ -30,9 +30,9 @@ Some notes:
 | Run tasks in parallel                                   | 2        | 287        |                       |                     |
 | Only run tasks against files that have actually changed | 2        | 149 + 80   |                       |                     |
 | Generate a boilerplate for well anything                | 3        | 134        |                       |                     |
-| Understand what each task does                          | 2        | 191        |                       |                     |
+| Understand what each task does                          | 2        | 201        |                       |                     |
 | ------------------------------------------------------- | -------- | ---------- | --------------------- |                     |
-|                                                         | TOTAL    | 2,101      | 1,499                 |                     |
+|                                                         | TOTAL    | 2,111      | 1,509                 |                     |
 
 ## Discarded sections
 
