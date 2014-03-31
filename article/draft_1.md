@@ -1,14 +1,14 @@
 # 8 Ways To Improve Your Grunt Setup
 
-Grunt has quickly become an essential command line tool for running tasks in our industry.  The BBC News development team use Grunt on a daily basis to keep bbc.co.uk/news up to date.  Mark McDonnell and Tom Maslen from BBC News talk you through 8 steps to help you keep your Grunt setup fast, maintainable and scaleable.
+Grunt has quickly become an essential configuration based command line tool within our industry for running tasks that can handle all kind of requirements. The BBC News development team use Grunt on a daily basis to ensure the bbc.co.uk/news code base is tested, linted, formalised, optimised and automated. Mark McDonnell and Tom Maslen from BBC News talk you through 8 steps to help you keep your Grunt setup fast, maintainable and scaleable.
 
 ## 1: Keep your Gruntfile maintainable
 
-Probably the biggest concern for developers working with Grunt is that this wonderfully powerful configuration file over a short period of time will evolve into an unwieldy beast.
+One of the biggest concerns for developers working with Grunt is that this wonderfully powerful configuration file can evolve into an unwieldy beast. As with most complex tools, problems with maintainability can rapidly accumulate in a short period of time; leaving users overwhelmed with how best to resolve the complexity they're now faced with.
 
-The best way to tackle this problem is to simplify as much as you can. So if we take a leaf out of the object-oriented design handbook we would know that our configuration file is doing too much and we need to break it down into component parts so it can more easily be managed and scaled (e.g. when we need to start adding more and more configuration and tasks to be run).
+The best way to tackle this problem is to simplify as much as you can. If we were to take a leaf out of the object-oriented design handbook, we would know that our configuration file is doing too much and that we need to break it down into component parts to ease our ability to extend and manage our Gruntfile requirements (e.g. when we need to start adding more tasks and configuration settings).
 
-There are a few ways to solve this problem, but really the majority of solutions boil down to different implementations of the same general theme. The example I'm going to demonstrate is the simplest way possible to reduce the size and complexity of your Gruntfile.
+What we need to do is simplify our Gruntfile's structure. There are a few ways to do this, but the majority of solutions you read about boil down to different implementations of that general theme. The example I'm going to demonstrate is the best way possible to reduce the size and complexity of your Gruntfile.
 
 In your root directory (where you have your Gruntfile) you'll create a 'grunt' folder. Inside that folder will be individual JavaScript files; each containing a different task that you would have included within your main Gruntfile.
 
@@ -29,7 +29,9 @@ module.exports = function(grunt) {
 };
 ```
 
-Isn't that better! You could have called the folder any thing you like, 'omg-so-sexy' for example, and in the above code we would change it to: `grunt.loadTasks('omg-so-sexy')`.  With each task in its own file, we need to define it slightly differently to how it would normally be added in the Grunt file:
+
+
+Isn't that better! It's worth noting that the string `'grunt'` that was passed to the `loadTasks` method has nothing to do with the actual Grunt object, it refers to the name of the folder you created. You could have called the folder any thing you like, 'omg-so-sexy' for example, and in the above code we would change it to: `grunt.loadTasks('omg-so-sexy')`.  With each task in its own file, we need to define it slightly differently to how it would normally be added in the Grunt file:
 
 ```js
 module.exports = function(grunt) {
@@ -48,9 +50,11 @@ module.exports = function(grunt) {
 
 ## 2: Keep that config out of your config!
 
-Another important technique we can utilise is to move configuration files outside of the Gruntfile. One obvious place we see this happen a lot is with [JSHint](http://www.jshint.com/).
+Another important technique we can utilise is to move specific types of configuration outside of the Gruntfile.  One obvious place we see this happen a lot is with the JSHint plugin (https://github.com/gruntjs/grunt-contrib-jshint) which can be quite large and take up a lot of space in your overall Gruntfile. 
 
-The first step is to create a new file called `.jshintrc` and within it put your JSON configuration:
+Luckily JSHint has a built-in solution to this problem. Let's take a look at how we can use it to clean up our JSHint task.
+
+The first step we need to take is to create a new file called `.jshintrc` and within it put your JSON configuration:
 
 ```json
 {
@@ -59,7 +63,7 @@ The first step is to create a new file called `.jshintrc` and within it put your
 }
 ```
 
-Then from within your JSHint task (which we'll assume is now safely out of the Gruntfile also and within it's own separate task file) you can specify the location of the configuration file:
+Then from within your JSHint task (which we'll assume is now safely out of the Gruntfile and within it's own separate task file) you can specify the location of the configuration file:
 
 ```js
 jshint: {
@@ -105,13 +109,13 @@ To be honest there isn't much to choose between them, I'd lean slightly towards 
 * The project chatter on github is more recent (relying on dead projects isn't fun)
 * It's made by Sindre Sorhus!!!
 
-Regardless of which one you choose (choose [grunt-parallel]() if you also want to run none Grunt tasks) the one thing you should do is use it together with [time-grunt](), a fantastic tool that tells you how long each task takes to run.
+Regardless of which one you choose (pick grunt-parallel if you also want to run custom - non Grunt - tasks) the one thing you should do is use it together with the time-grunt plugin, which is a fantastic tool that tells you how long each task takes to run.
 
 > "Premature optimisations are the root of all evil!"
 
-You've probably heard that saying before, but it's true. Before you start micro-optimising every part of your Gruntfile the very first thing you should do is measure how long the build takes to run in its current form. Then after each refactoring you carry out: analyse the performance of the build to ensure you've not introduced a regression.
+You've probably heard that quote before, but it's true. Before you start micro-optimising every part of your Gruntfile the very first thing you should do is measure how long the build takes to run in its current form. Then after each refactoring you carry out: analyse the performance of the build to ensure you've not introduced a regression.
 
-For example, we recently added [grunt-concurrent]() into our Grunt setup, it sped up the processing of two sub tasks with requirejs, but it actually increased the build time for our Sass tasks.  This was because the two sub tasks within Sass were running at 0.8 and 0.2 seconds, running them side-by-side with the 0.5 second penalty of spinning up a second instance of Grunt increased the time to 1.3 seconds! This is because there is a cost to running two tasks in parallel, (normally about 0.5 seconds) the time it takes to spin up another instance of Grunt.
+For example, we recently added the grunt-concurrent plugin into our Grunt setup; it sped up the processing of two sub tasks with requirejs, but it actually increased the build time for our Sass tasks.  This was because the two sub tasks within Sass were running at 0.8 and 0.2 seconds. Running them side-by-side with the 0.5 second penalty of spinning up a second instance of Grunt increased the time to 1.3 seconds! This is because there is a cost to running two tasks in parallel, (normally about 0.5 seconds) the time it takes to spin up another instance of Grunt.
 
 ## 5: Speed up your development workflow
 
@@ -144,6 +148,8 @@ watch: {
   },
 }
 ```
+
+Additionally, you can improve the performance of running the watch task against your Sass files by utilising the https://github.com/distracteddev/sassWatch plugin which avoids spinning up a new Ruby environment (something Sass relies on) every time a watch-hook is triggered.
 
 ## 6: Only run tasks against files that have actually changed
 
@@ -179,14 +185,18 @@ For example, imagine you develop a lot of Node.js modules that you publish to NP
 
 ## 8: Understand what each task does
 
-The biggest criticism of Grunt is that its slow.  While Grunt does have some sub-optimal design decisions in it (which are being addressed in Grunt v1.0), a Grunt setup overloaded with tasks is obviously going to run slowly.
+The biggest criticism of Grunt is that it's slow.  While Grunt does contain some sub-optimal design decisions (which are being actively addressed for the upcoming Grunt v1.0 release), a Grunt setup overloaded with tasks is obviously going to run slowly.
 
-For a project I recently worked on, we added a 90Kb data file for D3.js to compile into a map.  This caused our grunt build to take over 2 minutes to render a concatenated JS file via [grunt-contrib-requirejs](https://github.com/gruntjs/grunt-contrib-requirejs) - not a great time to wait between saves.  The build took this long because [grunt-contrib-requirejs] was creating a JS sourcemap for the concatenated file, a fruitless task for a data file with thousands of points.  Blacklisting the data file brought the build back down to a few seconds.
+As an example, we recently worked on a project where we had added a 90Kb data file for D3.js (a popular data visualisation tool) to compile into an interactive map.  This data file caused our grunt build to take over 2 minutes to render a concatenated JS file via [grunt-contrib-requirejs](https://github.com/gruntjs/grunt-contrib-requirejs) - not a great experience being forced to wait that long between saves.  The build took this long because [grunt-contrib-requirejs] was creating a JS sourcemap for the concatenated file, a fruitless task for a data file with thousands of points.  Blacklisting the data file brought the build back down to just a few seconds.
+
+Hopefully this example demonstrates that although this last tip seems too simple to bother mentioning; we notice this happening more often than not. We're so focused on the immediate problem we're trying to solve that we don't "see the woods for the trees" and so simple optimisations can have a massive performance improvement.
+
+## Conclusion
 
 Ultimately, the best way to keep your Grunt setup maintainable, fast and scaleable is to understand what you are doing.  Keep reading about Grunt; follow thought leaders like Ben Altman (@cowboy - the creator of Grunt), Sindre Sorhus (@sindresorhus - node.js superstar) and Addy Osmani (@addyosmani - workflow enthusiast), and follow @gruntjs for the latest news on the project.  The best craft people become experts in how to use their tools.
 
-![](http://farm7.staticflickr.com/6060/5915265225_a96c228716_n.jpg)
+![](http://farm7.staticflickr.com/6060/5915265225_a96c228716_n.jpg)  
 Ben Altman (@cowboy) created Grunt as a tool for himself in 2011.  Its taken just 3 years for it to become an industry standard tool.
 
-![](https://pbs.twimg.com/profile_images/449923154354257921/MmIg3B2X.jpeg)
+![](https://pbs.twimg.com/profile_images/449923154354257921/MmIg3B2X.jpeg)  
 Sindre Sorhus (@sindresorhus) has created some of the most popular and useful Grunt plugins such as `load-grunt-tasks`, `grunt-concurrent` and `time-grunt`.
