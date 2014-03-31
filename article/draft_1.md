@@ -172,6 +172,9 @@ Grunt has a built-in feature called `grunt-init`, it allows you to define a temp
 
 Its a command line tool configured by a JSON file.  You set questions in the JSON file, these are answered on the command line, and the values are passed into the project template.
 
+![]()
+The Visual Journalism team in BBC News use grunt-init to create each new custom built interactive.  Compare these two repos, the content is different but the project structure is identical.
+
 For example, imagine you develop a lot of Node.js modules that you publish to NPM (Node Package Manager). Rather than you having to create the same folder struture and documentation README files over and over (but only changing minor details like the name of the library), you could create a template that `grunt-init` can use to set-up everything automatically for you.
 
 ## 8: Understand what each task does
