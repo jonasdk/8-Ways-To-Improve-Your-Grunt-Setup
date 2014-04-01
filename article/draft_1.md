@@ -96,6 +96,9 @@ The task `images` is loaded into memory each time Grunt runs, but the sub tasks 
 
 ## 4: Run tasks in parallel
 
+![](https://pbs.twimg.com/profile_images/449923154354257921/MmIg3B2X.jpeg)  
+Sindre Sorhus (@sindresorhus) has created some of the most popular and useful Grunt plugins such as `load-grunt-tasks`, `grunt-concurrent` and `time-grunt`.
+
 A great way to speed up your grunt running time is to run tasks in parallel.  There are two very popular tasks that help you do this:
 
 * [grunt-parallel]()
@@ -109,25 +112,12 @@ To be honest there isn't much to choose between them, I'd lean slightly towards 
 
 Regardless of which one you choose (pick grunt-parallel if you also want to run custom - non Grunt - tasks) the one thing you should do is use it together with the time-grunt plugin, which is a fantastic tool that tells you how long each task takes to run.
 
-> "Premature optimisations are the root of all evil!"
 
 You've probably heard that quote before, but it's true. Before you start micro-optimising every part of your Gruntfile the very first thing you should do is measure how long the build takes to run in its current form. Then after each refactoring you carry out: analyse the performance of the build to ensure you've not introduced a regression.
 
 For example, we recently added the grunt-concurrent plugin into our Grunt setup; it sped up the processing of two sub tasks with requirejs, but it actually increased the build time for our Sass tasks.  This was because the two sub tasks within Sass were running at 0.8 and 0.2 seconds. Running them side-by-side with the 0.5 second penalty of spinning up a second instance of Grunt increased the time to 1.3 seconds! This is because there is a cost to running two tasks in parallel, (normally about 0.5 seconds) the time it takes to spin up another instance of Grunt.
 
-## 5: Speed up your development workflow
-
-Along with keeping your Gruntfile maintainable, the next biggest improvement you can make to your usage of Grunt is to have it help you improve your workflow; to help automate those tedious parts of your development day.
-
-Here are a few Grunt tasks you probably should be using:
-
-- [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
-- [grunt-newer](https://github.com/tschaub/grunt-newer)
-- [grunt-responsive-images](https://github.com/andismith/grunt-responsive-images)
-- [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
-- [grunt-init](http://gruntjs.com/project-scaffolding)
-
-### Only run tasks when a change has occurred
+## 5: Only run tasks when a change has occurred
 
 If you haven't heard of the `grunt-contrib-watch` task then it should be the first thing you look at next as it's a life saver for ensuring you only run a task when the associated files with that task have actually changed.
 
@@ -146,8 +136,6 @@ watch: {
   },
 }
 ```
-
-Additionally, you can improve the performance of running the watch task against your Sass files by utilising the https://github.com/distracteddev/sassWatch plugin which avoids spinning up a new Ruby environment (something Sass relies on) every time a watch-hook is triggered.
 
 ## 6: Only run tasks against files that have actually changed
 
@@ -187,14 +175,9 @@ The biggest criticism of Grunt is that it's slow.  While Grunt does contain some
 
 As an example, we recently worked on a project where we had added a 90Kb data file for D3.js (a popular data visualisation tool) to compile into an interactive map.  This data file caused our grunt build to take over 2 minutes to render a concatenated JS file via [grunt-contrib-requirejs](https://github.com/gruntjs/grunt-contrib-requirejs) - not a great experience being forced to wait that long between saves.  The build took this long because [grunt-contrib-requirejs] was creating a JS sourcemap for the concatenated file, a fruitless task for a data file with thousands of points.  Blacklisting the data file brought the build back down to just a few seconds.
 
-Hopefully this example demonstrates that although this last tip seems too simple to bother mentioning; we notice this happening more often than not. We're so focused on the immediate problem we're trying to solve that we don't "see the woods for the trees" and so simple optimisations can have a massive performance improvement.
-
 ## Conclusion
 
 Ultimately, the best way to keep your Grunt setup maintainable, fast and scaleable is to understand what you are doing.  Keep reading about Grunt; follow thought leaders like Ben Altman (@cowboy - the creator of Grunt), Sindre Sorhus (@sindresorhus - node.js superstar) and Addy Osmani (@addyosmani - workflow enthusiast), and follow @gruntjs for the latest news on the project.  The best craft people become experts in how to use their tools.
 
 ![](http://farm7.staticflickr.com/6060/5915265225_a96c228716_n.jpg)  
 Ben Altman (@cowboy) created Grunt as a tool for himself in 2011.  Its taken just 3 years for it to become an industry standard tool.
-
-![](https://pbs.twimg.com/profile_images/449923154354257921/MmIg3B2X.jpeg)  
-Sindre Sorhus (@sindresorhus) has created some of the most popular and useful Grunt plugins such as `load-grunt-tasks`, `grunt-concurrent` and `time-grunt`.
