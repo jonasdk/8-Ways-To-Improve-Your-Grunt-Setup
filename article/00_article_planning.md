@@ -23,17 +23,23 @@ Some notes:
 
 | Section name                                            | Priority | Word count | Limit reached (1,550) | Box outs (300 each) |
 | ------------------------------------------------------- | -------- | ---------- | --------------------- | ------------------- |
-| Conditionally load tasks                                | 1        | 203 + 90   |                       | *                   |
-| Only run tasks when a change has occured                | 2        | 219 + 90   |                       | *                   |
+| Conditionally load tasks                                | 1        | 204 + 90   |                       | *                   |
+| Only run tasks when a change has occured                | 2        | 150 + 80   |                       | *                   |
 | ------------------------------------------------------- | -------- | ---------- | --------------------- | ------------------- |
-| Keep your gruntfile maintainable                        | 1        | 255 + 190  |                       |                     |
-| Keep that config out of your config                     | 1        | 124 + 100  |                       |                     |
-| Run tasks in parallel                                   | 2        | 287        |                       |                     |
-| Only run tasks against files that have actually changed | 2        | 149 + 80   |                       |                     |
-| Generate a boilerplate for well anything                | 3        | 134        |                       |                     |
-| Understand what each task does                          | 2        | 201        |                       |                     |
+| Keep your gruntfile maintainable                        | 1        | 325 + 190  |                       |                     |
+| Keep that config out of your config                     | 1        | 181 + 100  |                       |                     |
+| Run tasks in parallel                                   | 2        | 297        |                       |                     |
+| Only run tasks against files that have actually changed | 2        | 259 + 80   |                       |                     |
+| Generate a boilerplate for well anything                | 3        | 135        | *                     |                     |
+| Understand what each task does                          | 2        | 203        |                       |                     |
+| Conclusion                                              | 3        |  72        |                       |                     |
 | ------------------------------------------------------- | -------- | ---------- | --------------------- |                     |
-|                                                         | TOTAL    | 2,111      | 1,509                 |                     |
+|                                                         | TOTAL    | 2,366      | 1,842                 |                     |
+
+
+
+
+
 
 ## Discarded sections
 
