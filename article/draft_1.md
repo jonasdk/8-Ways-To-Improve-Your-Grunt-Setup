@@ -1,5 +1,7 @@
 # 8 Ways To Improve Your Grunt Setup
 
+![](Grunt-logo.png)
+
 Grunt has quickly become an essential configuration based command line tool within our industry for running tasks that can handle all kind of requirements. The BBC News development team use Grunt on a daily basis to ensure the bbc.co.uk/news code base is tested, linted, formalised, optimised and automated. Mark McDonnell and Tom Maslen from BBC News talk you through 8 steps to help you keep your Grunt setup fast, maintainable and scaleable.
 
 ## 1: Keep your Gruntfile maintainable
@@ -45,6 +47,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-requirejs');
 };
 ```
+
+!()[BBC-World-Service-Arabic.png]
+Grunt is used to manage 26 versions of BBC News client side assets.  Each site has seperate JS & CSS, with some of them requiring left to right configuration.
 
 ## 2: Keep that config out of your config!
 
@@ -160,12 +165,15 @@ Now when you run `grunt lint` it will only run the `jshint` task against files t
 
 ## 7: Create a default Grunt setup starting point for all your projects
 
+![](BBC-News-Budget-Calculator-2014.png)
+"Budget Calculator: How will Budget 2014 affect you?" was a bespoke interactive created using `grunt-init`
+
 Grunt has a built-in feature called `grunt-init`, it allows you to define a template project structure that gets dynamically injected with configurable values when you start a new project.
 
 Its a command line tool configured by a JSON file.  You set questions in the JSON file, these are answered on the command line, and the values are passed into the project template.
 
-![]()
-The Visual Journalism team in BBC News use grunt-init to create each new custom built interactive.  Compare these two repos, the content is different but the project structure is identical.
+![](grunt-init screenshot)
+The Visual Journalism team in BBC News use grunt-init to create each new custom built interactive.
 
 For example, imagine you develop a lot of Node.js modules that you publish to NPM (Node Package Manager). Rather than you having to create the same folder struture and documentation README files over and over (but only changing minor details like the name of the library), you could create a template that `grunt-init` can use to set-up everything automatically for you.
 
