@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-    grunt.config(['jshint', 'all'], {
+    grunt.config('jshint', {
         files: ['app/*.js'],
         options: {
             jshintrc: './grunt/.jshintrc'
@@ -7,5 +7,5 @@ module.exports = function (grunt) {
     });
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-newer');
-    grunt.registerTask('lint', ['newer:jshint:all']);
+    grunt.registerTask('lint', ['newer:jshint']);
 };

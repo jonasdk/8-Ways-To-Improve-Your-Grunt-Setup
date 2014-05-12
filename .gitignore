@@ -1,3 +1,7 @@
 .sass-cache
 node_modules
 npm-debug.log
+
+grunt-concurrent.xlsx
+uk-election-key-marginals.png
+world-map-of-gay-rights.png
