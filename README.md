@@ -1,8 +1,6 @@
-# The Ultimate Gruntfile
+# 8 Ways to Improve Your Grunt Setup
 
-## Setup
-
-### Prerequisites
+To use this project you need to have the following technologies installed on your computer:
 
 * git
 * Node
@@ -10,16 +8,13 @@
 * brew
 * GraphicsMagick
 
-## Checkout the project
+## Get started
 
-## npm install
+You need to check the project out of git, install the npm dependencies and then run Grunt to set all the client side assets up.
 
-## Running the build
-
-### `grunt`
-
-### `grunt connect`
-
-### `grunt watch`
-
-### `grunt images`
+```
+git clone git@github.com:BBC-News/8-Ways-To-Improve-Your-Grunt-Setup.git
+cd 8-Ways-To-Improve-Your-Grunt-Setup
+npm install
+grunt
+```
