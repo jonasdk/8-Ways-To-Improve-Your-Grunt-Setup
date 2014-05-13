@@ -18,3 +18,23 @@ cd 8-Ways-To-Improve-Your-Grunt-Setup
 npm install
 grunt
 ```
+
+## Project overview
+
+Here is the contents of the project:
+
+```
+/app
+/grunt
+/images
+/site
+Gruntfile.js
+package.json
+```
+
+* The `/app` directory holds all the JS and Sass files that will be used in the sample webpage.
+* The `/grunt` directory is made up of Grunt task configs, seperated into seperate files.
+* `/images` is where the original, large image assets are kept (the demo webpage uses responsive images!).
+* '/site' is the directory that holds your website, this demo only has one page.  Grunt will push the generated JS, CSS and image assets into here.
+* If you don't know what the `Gruntfile.js` is then best go read (this website first)[http://www.gruntjs.com].
+* `package.json` is a required file for defining the dependencies of this project.  You can ignore it (unless `npm install` fails when you run it).
