@@ -12,4 +12,14 @@ module.exports = function(grunt) {
         }
     });
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+
+    grunt.config(['copy', 'require'], {
+        files: [{
+            expand: true,
+            cwd:    'app/vendor',
+            src:    ['require.js'],
+            dest:   'site/js/'
+        }]
+    });
+    grunt.loadNpmTasks('grunt-contrib-copy');
 };
